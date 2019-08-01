@@ -13,7 +13,7 @@ after_success:
   - docker build -t karanotts/docker-fib-server ./server
   - docker build -t karanotts/docker-fib-worker ./worker
 
-  - echo "$docker_password" | docker login -i "$docker_user" --pasword-stdin
+  - echo "$docker_password" | docker login -u "$docker_user" --pasword-stdin
   - docker push karanotts/docker-fib-client
   - docker push karanotts/docker-fib-nginx
   - docker push karanotts/docker-fib-server
